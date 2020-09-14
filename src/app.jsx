@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {CalcUi} from './calculator';
 
 class CalculatorContainer extends React.Component {
     constructor(props){
@@ -68,20 +69,8 @@ class CalculatorContainer extends React.Component {
     render(){
         let {num1,num2} = this.state;
         return (
-           
-            <div>
-                <h1>{this.state.result}</h1>
-                <input type="text" value={num1} onChange={this.setNum1} />
-                <input type="text" value={num2} onChange={this.setNum2} />
-                <button type="submit" onClick={this.clear}>Clear</button>
-                <div>
-                <button onClick={this.add}>+</button>
-                <button onClick={this.subtract}>-</button>
-                <button onClick={this.multiply}>*</button>
-                <button onClick={this.divide}>/</button>
-                </div>
-                
-            </div>
+           <CalcUi />
+         
         );
     }
 }
