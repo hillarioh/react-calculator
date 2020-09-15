@@ -21,6 +21,7 @@ export class CalcUi extends React.Component {
         this.multiply = this.multiply.bind(this);
         this.divide = this.divide.bind(this);
         this.percentage = this.percentage.bind(this);
+        this.getResult = this.getResult.bind(this);
     }
 
     handleInput(e){
@@ -118,7 +119,9 @@ export class CalcUi extends React.Component {
     }
 
     getResult(){
-
+        this.setState({
+            calculation: ''
+        });
     }
 
 
