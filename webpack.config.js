@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -20,7 +21,15 @@ module.exports = {
         },
       }
     ]
-   },
+   },  plugins: [
+    
+    new HtmlWebpackPlugin({
+      // injects bundle.js to our new index.html
+      inject: true,
+      // copys the content of the existing index.html to the new /build index.html
+      template:  path.resolve('./index.html'),
+    }),
+  ],
    devtool: 'source-map',
    resolve: {
      extensions: ['.js','.jsx','*']
