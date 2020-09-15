@@ -18,10 +18,6 @@ class CalculatorContainer extends React.Component {
         });
     }   
 
-   
-
-   
-
     render(){
         let {num1,num2} = this.state;
         return (
