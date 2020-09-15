@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 export class CalcUi extends React.Component {
     constructor(props){
         super(props);
@@ -41,10 +39,7 @@ export class CalcUi extends React.Component {
              });
         }
 
-        
-        
     }
-
 
     clear(){
         this.setState({
@@ -124,11 +119,7 @@ export class CalcUi extends React.Component {
         });
     }
 
-
-
-
     render(){
-        // console.log(this.state.result)
         return(
             <div>
                 <div id="calc">
