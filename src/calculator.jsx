@@ -9,6 +9,7 @@ export class CalcUi extends React.Component {
            num1: '',
            num2: '',
            operator: false, 
+           calculation: '',
            meth: '',
            result: 0
         }
@@ -23,6 +24,9 @@ export class CalcUi extends React.Component {
     }
 
     handleInput(e){
+        this.setState({
+            calculation: this.state.calculation += e.target.id
+        });
 
         if (this.state.operator){
             this.setState({
@@ -47,6 +51,7 @@ export class CalcUi extends React.Component {
            num2: '',
            operator: false, 
            meth: '',
+           calculation: '',
            result: 0
         });
     }
@@ -63,6 +68,7 @@ export class CalcUi extends React.Component {
             });
         } else  {
                 this.setState({
+                    calculation: this.state.calculation += '+',
                     operator: true,
                     meth: this.add
                 });
@@ -76,6 +82,7 @@ export class CalcUi extends React.Component {
             });
         } else  {
                 this.setState({
+                    calculation: this.state.calculation += '-',
                     operator: true,
                     meth: this.subtract
                 });
@@ -89,6 +96,7 @@ export class CalcUi extends React.Component {
             });
         } else  {
                 this.setState({
+                    calculation: this.state.calculation += '*',
                     operator: true,
                     meth: this.multiply
                 });
@@ -103,6 +111,7 @@ export class CalcUi extends React.Component {
         } else  {
                 this.setState({
                     operator: true,
+                    calculation: this.state.calculation += '/',
                     meth: this.divide
                 });
             }
@@ -120,7 +129,7 @@ export class CalcUi extends React.Component {
         return(
             <div>
                 <div id="calc">
-                    <div className="result"><p>{this.state.result || 0}</p></div>
+        <div className="result"><p><span>{this.state.calculation}</span><span>{this.state.result || 0}</span></p></div>
                     <div className="col-4 r1">                    
                         <p id="ac" onClick={this.clear}>AC</p>
                         <p id="p-n" onClick={this.posOrNeg}>+/-</p>
