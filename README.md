@@ -1,10 +1,6 @@
 # react-calculator
 This is a basic react project that entails use of react ro create a calculator with the most basic functionalities.
 
-
-## Live
-[calc](https://zealous-cori-c9e374.netlify.app/)
-
 ## Screenshot
 ![screenshot1](./calc.png)
 
