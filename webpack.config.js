@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
    entry: path.join(__dirname, 'src', 'app.jsx'),
    output: {
 	filename: 'bundle.js',
@@ -20,7 +20,7 @@ module.exports = {
         },
       }
     ]
-   },
+   }, 
    devtool: 'source-map',
    resolve: {
      extensions: ['.js','.jsx','*']
