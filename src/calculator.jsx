@@ -70,7 +70,11 @@ export class CalcUi extends React.Component {
         })
     }
 
-    percentage(){}
+    percentage(){
+        this.setState({
+            result: (this.state.result)/(100)
+        })
+    }
 
     add(){ 
 
