@@ -64,7 +64,11 @@ export class CalcUi extends React.Component {
         });
     }
 
-    posOrNeg(){}
+    posOrNeg(){
+        this.setState({
+            result: (this.state.result)*(-1)
+        })
+    }
 
     percentage(){}
 
