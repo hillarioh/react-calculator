@@ -147,7 +147,7 @@ export class CalcUi extends React.Component {
         return(
             <div>
                 <div id="calc">
-        <div className="result"><p><span>{this.state.calculation}</span><span>{this.state.result || 0}</span></p></div>
+        <div className="result"><p><span>{this.state.calculation}</span><span className="input">{this.state.result || 0}</span></p></div>
                     <div className="col-4 r1">                    
                         <p id="ac" onClick={this.clear}>AC</p>
                         <p id="p-n" onClick={this.posOrNeg}>+/-</p>
