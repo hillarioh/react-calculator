@@ -9,11 +9,13 @@ export class CalcUi extends React.Component {
            operator: false, 
            calculation: '',
            meth: '',
+           decimal: false,
            result: 0
         }
         this.handleInput = this.handleInput.bind(this);
         this.posOrNeg = this.posOrNeg.bind(this);
         this.clear = this.clear.bind(this);
+        this.decimalInput = this.decimalInput.bind(this);
         this.add = this.add.bind(this);
         this.subtract = this.subtract.bind(this);
         this.multiply = this.multiply.bind(this);
@@ -41,6 +43,15 @@ export class CalcUi extends React.Component {
 
     }
 
+    decimalInput(e){
+        if(!this.state.decimal){
+            this.setState({
+                decimal: true
+            })
+            this.handleInput(e);
+        }
+    }
+
     clear(){
         this.setState({
             num1: '',
@@ -48,6 +59,7 @@ export class CalcUi extends React.Component {
            operator: false, 
            meth: '',
            calculation: '',
+           decimal: false,
            result: 0
         });
     }
@@ -65,6 +77,7 @@ export class CalcUi extends React.Component {
         } else  {
                 this.setState({
                     calculation: this.state.calculation += '+',
+                    decimal: false,
                     operator: true,
                     meth: this.add
                 });
@@ -79,6 +92,7 @@ export class CalcUi extends React.Component {
         } else  {
                 this.setState({
                     calculation: this.state.calculation += '-',
+                    decimal: false,
                     operator: true,
                     meth: this.subtract
                 });
@@ -93,6 +107,7 @@ export class CalcUi extends React.Component {
         } else  {
                 this.setState({
                     calculation: this.state.calculation += '*',
+                    decimal: false,
                     operator: true,
                     meth: this.multiply
                 });
@@ -107,6 +122,7 @@ export class CalcUi extends React.Component {
         } else  {
                 this.setState({
                     operator: true,
+                    decimal: false,
                     calculation: this.state.calculation += '/',
                     meth: this.divide
                 });
@@ -150,7 +166,7 @@ export class CalcUi extends React.Component {
                     </div>
                     <div className="col-3 r5">
                         <p id="0" onClick={this.handleInput}>0</p>
-                        <p id="." onClick={this.handleInput}>.</p>
+                        <p id="." onClick={this.decimalInput}>.</p>
                         <p id="equal" onClick={this.getResult}>=</p>
                     </div>
                 </div>
